@@ -35,19 +35,34 @@
         <div class="row">
             <div class="col-2">    </div>
             <div class="col-8">
-                <div class="row-margin">
-                    <h2>Information </h2>
-                    <p>
-                    This is a page for your final project here,<br> we can add information about the project 
-                    </p>
+            <h3>Software</h3>
+            <form action="" method="post">
+              <div>
+                <label for="name"> Name </label>
+                <input type="text" name="name" id="name">
                 </div>
-            
-                <hr>
-                <h2> Functionality</h2>
-                <ul>
-                    <li><a href="page/List.php">List of installation</a> : Will allow you to display all the installation enter in the system</li>
-                    <li><a href="page/form.php" >Enter new installation</a> : Use this page to add information about any new installation that you need to do</li>
-                </ul>
+                <div>
+                <label for="description"> Description </label>
+                <textarea name="description" id="" cols="30" rows="10"></textarea>
+                </div>
+                <br>
+                <h3>Instalation</h3>
+                <div>
+                <label for="date"> date </label>
+                <input type="date" name="date" id="date">
+                </div>
+                <div>
+                <label for="enviroment"> Enviroment </label>
+                <select name="enviroment" id="enviroment">
+                  <option value="Windows"> Windows </option>
+                  <option value="Unix"> Unix </option>
+                  <option value="Linux"> Linux </option>
+                  <option value="Windows Server">Windows Server</option>
+                  <option value="Linux Server"> Linux Server</option>
+                </select>
+              </div>
+
+            </form>
             </div>
             <div class="col-2">    </div>
         </div>
@@ -58,3 +73,4 @@
 
 </body>
 </html>
+  

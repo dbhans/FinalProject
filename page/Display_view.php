@@ -35,19 +35,6 @@
         <div class="row">
             <div class="col-2">    </div>
             <div class="col-8">
-                <div class="row-margin">
-                    <h2>Information </h2>
-                    <p>
-                    This is a page for your final project here,<br> we can add information about the project 
-                    </p>
-                </div>
-            
-                <hr>
-                <h2> Functionality</h2>
-                <ul>
-                    <li><a href="page/List.php">List of installation</a> : Will allow you to display all the installation enter in the system</li>
-                    <li><a href="page/form.php" >Enter new installation</a> : Use this page to add information about any new installation that you need to do</li>
-                </ul>
             </div>
             <div class="col-2">    </div>
         </div>

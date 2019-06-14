@@ -1,3 +1,8 @@
+<?php
+//Load template
+require_once('../processpage/find.php');
+$system0 = findone($_GET['id']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,17 +44,23 @@
             <form action="" method="post">
               <div>
                 <label for="name"> Name </label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="<?php
+					echo htmlspecialchars($user_info[0]['username'], ENT_QUOTES);
+					?>">
                 </div>
                 <div>
                 <label for="description"> Description </label>
-                <textarea name="description" id="" cols="30" rows="10"></textarea>
+                <textarea name="description" id="" cols="30" rows="10"><?php
+					echo htmlspecialchars($user_info[0]['username'], ENT_QUOTES);
+					?></textarea>
                 </div>
                 <br>
                 <h3>Instalation</h3>
                 <div>
                 <label for="date"> date </label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date"value="<?php
+					echo htmlspecialchars($user_info[0]['username'], ENT_QUOTES);
+					?>">
                 </div>
                 <div>
                 <label for="enviroment"> Enviroment </label>

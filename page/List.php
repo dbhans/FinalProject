@@ -1,3 +1,8 @@
+<?php
+//Load template
+require_once('../processpage/find.php');
+$system0 = findall();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +46,15 @@
             <tr>
                 <th>Name </th> <th>Description </th> <th>Date</th> <th>Display</th></tr>
         </thead>
-    <tr>
-    <td>s</td> <td>d</td><td>er</td><td>sd</td></tr>
+   
+    <?php 
+			foreach ($system0 as $numb => $inst) {
+                echo " <tr> <td>".htmlspecialchars($inst["name"]."</td> <td> ".$employee_info["employee_last_name"], ENT_QUOTES)."</td> <td> ".htmlspecialchars($employee_info["employee_last_name"], ENT_QUOTES)
+                    ."</td> <td> ".htmlspecialchars($employee_info["employee_last_name"], ENT_QUOTES)."</td> <td> ".htmlspecialchars($employee_info["employee_last_name"], ENT_QUOTES)."</td></tr>";
+			}						
+	?>
+    
+    
     </table>
     </div>
             <div class="col-2">    </div>

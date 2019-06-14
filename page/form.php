@@ -36,7 +36,7 @@
             <div class="col-2">    </div>
             <div class="col-8">
 <h3>Software</h3>
-  <form action="" method="post">
+  <form action="../processpage/entry.php" method="post">
 
 
 <div>
@@ -66,7 +66,7 @@
 
 <div>
 
-<input type="submit" value="Update"></div>
+<input type="submit" value="Submit"></div>
 
 </form>
 </div>

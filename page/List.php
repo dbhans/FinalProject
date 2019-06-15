@@ -41,8 +41,17 @@
             <tr>
                 <th>Name </th> <th>Description </th> <th>Date</th> <th>Display</th></tr>
         </thead>
-    <tr>
-    <td>s</td> <td>d</td><td>er</td><td>sd</td></tr>
+        
+<?php
+$mysql = new PDO('mysql:host=localhost;dbname=it', "root", "");
+$res = $mysql->query('select * from sta');
+//print_r($res);
+
+foreach ($res as $sela ){
+    echo "<tr><td>".$sela['name']."</td> <td>".$sela['des']."</td><td>".$sela['des']."</td><td><a href='update.php?id=".$sela['id']."'><button>Update</button></a></td></tr>";
+}
+?>
+    
     </table>
     </div>
             <div class="col-2">    </div>

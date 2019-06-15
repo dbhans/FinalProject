@@ -14,16 +14,16 @@
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark" style = "margin-top:15px; margin-bottom:30px">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                <a class="nav-link" href="">Home</a>
+                <a class="nav-link" href="../">Home</a>
                 </li>
             </ul>
             <div style="margin-left:100px">
                 <ul class="navbar-nav ">        
                     <li class="nav-item">
-                    <a class="nav-link" href="page/List.php">List of installation</a>
+                    <a class="nav-link" href="../page/List.php">List of installation</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="page/form.php" >Enter new installation</a>
+                    <a class="nav-link" href="../page/form.php" >Enter new installation</a>
                     </li>
                     <!--<li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
@@ -47,14 +47,16 @@
                 enviroment, 
                 date, 
                 description,
-                 name
+                 name,
+                 flow
             ) 
             VALUES (
 
     :enviroment,
     :date,
     :description,
-    :name
+    :name,
+    :flow
 
 )
 ";
@@ -64,8 +66,8 @@ $insert_array = array(
 	'name' => $_POST['name'],
     'description' => $_POST['description'],
     'enviroment' => $_POST['enviroment'],
-    'date' => $_POST['date']
-	
+    'date' => $_POST['date'],
+	'flow' => $_POST['flow']
 );
 
 if(!$stmt = $mysql->prepare($sql)){
@@ -81,7 +83,7 @@ if (!isset($errors)) {
             ?>
            <h4> Unable to save the informations for the new installation </h4> 
 <?php } else { ?>
-<h4> All information have been save properly</h4> <?php }} ?>
+<h4> All information have been save properly</h4> <?php } }?>
             </div>
             <div class="col-2">    </div>
         </div>

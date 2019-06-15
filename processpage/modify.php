@@ -14,16 +14,16 @@
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark" style = "margin-top:15px; margin-bottom:30px">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                <a class="nav-link" href="">Home</a>
+                <a class="nav-link" href="../">Home</a>
                 </li>
             </ul>
             <div style="margin-left:100px">
                 <ul class="navbar-nav ">        
                     <li class="nav-item">
-                    <a class="nav-link" href="page/List.php">List of installation</a>
+                    <a class="nav-link" href="../page/List.php">List of installation</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="page/form.php" >Enter new installation</a>
+                    <a class="nav-link" href="../page/form.php" >Enter new installation</a>
                     </li>
                     <!--<li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
@@ -38,6 +38,7 @@
             <?php
              $errors = array();
              $mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');
+             if(isset($_POST["name"])||isset($_POST["date"])||isset($_POST["enviroment"])||isset($_POST["description"])){
 	$sql = "
 	
     UPDATE installation 
@@ -45,9 +46,10 @@
      enviroment=:enviroment,
      date=:date,
      description=:description,
-     name=:name
+     name=:name,
+     flow=:flow
     WHERE 
-	
+	id =:id
 	";
 	
 	$update_array = array(
@@ -57,25 +59,31 @@
         'description' => $_POST['description'],
         'enviroment' => $_POST["enviroment"],
         'id'=>$_POST["id"],
-		'date' => $_POST['date']
+        'date' => $_POST['date'],
+        'flow' => $_POST['flow']
 	);
 
-
-if(!$stmt = $mysql->prepare($sql)){
-	print_r($mysql->errorInfo());
-}
-
-if(!$stmt->execute($update_array)){
-	print_r($stmt->errorInfo());
-}
-
+    if(!$stmt = $mysql->prepare($sql)){
+    
+    
+        $errors = $mysql->errorInfo() ;
+    }
+    
+    if(!$stmt->execute($update_array)){
+        $errors = $stmt->errorInfo(); 	
+    }
+    if (!isset($errors)) {
+                ?>
+               <h4> Unable to update the informations for the new installation </h4> 
+    <?php } else { ?>
+    <h4> All information have been update properly</h4> <?php print_r($_POST);}} ?>
+                </div>
+                <div class="col-2">    </div>
             </div>
-            <div class="col-2">    </div>
+    
         </div>
-
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-
-</body>
-</html>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    </body>
+    </html>

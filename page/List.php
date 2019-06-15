@@ -1,3 +1,10 @@
+<?php
+//Load template
+//require_once('../processpage/find.php');
+$mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');	
+$stmt = $mysql->query("Select * from installation ");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +21,16 @@
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark" style = "margin-top:15px; margin-bottom:30px">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                <a class="nav-link" href="">Home</a>
+                <a class="nav-link" href="../">Home</a>
                 </li>
             </ul>
             <div style="margin-left:100px">
                 <ul class="navbar-nav ">        
                     <li class="nav-item">
-                    <a class="nav-link" href="page/List.php">List of installation</a>
+                    <a class="nav-link" href="List.php">List of installation</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="page/form.php" >Enter new installation</a>
+                    <a class="nav-link" href="form.php" >Enter new installation</a>
                     </li>
                     <!--<li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
@@ -42,6 +49,7 @@
                 <th>Name </th> <th>Description </th> <th>Date</th> <th>Display</th></tr>
         </thead>
         
+<<<<<<< HEAD
 <?php
 $mysql = new PDO('mysql:host=localhost;dbname=it', "root", "");
 $res = $mysql->query('select * from sta');
@@ -51,8 +59,19 @@ foreach ($res as $sela ){
     echo "<tr><td>".$sela['name']."</td> <td>".$sela['des']."</td><td>".$sela['des']."</td><td><a href='update.php?id=".$sela['id']."'><button>Update</button></a></td></tr>";
 }
 ?>
+=======
+   
+    <?php 
+			foreach ($stmt as $numb ) {
+                echo " <tr> <td>".htmlspecialchars($numb["name"])."</td> <td> ".htmlspecialchars($numb["description"], ENT_QUOTES)."</td> <td> ".htmlspecialchars($numb["date"], ENT_QUOTES)
+                    ."</td> <td> <a href='update.php?id=".htmlspecialchars($numb["id"], ENT_QUOTES)."'><button>Update</button></a></td> </tr>";
+			}						
+	?>
+    
+>>>>>>> f96c3d6a33539e8306bb98ac3aaf7ac42229999b
     
     </table>
+    
     </div>
             <div class="col-2">    </div>
         </div>

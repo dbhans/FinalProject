@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome</title>
+    <title>Installation</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style1.css">
@@ -14,16 +14,16 @@
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark" style = "margin-top:15px; margin-bottom:30px">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                <a class="nav-link" href="">Home</a>
+                <a class="nav-link" href="../">Home</a>
                 </li>
             </ul>
             <div style="margin-left:100px">
                 <ul class="navbar-nav ">        
                     <li class="nav-item">
-                    <a class="nav-link" href="page/List.php">List of installation</a>
+                    <a class="nav-link" href="List.php">List of installation</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="page/form.php" >Enter new installation</a>
+                    <a class="nav-link" href="form.php" >Enter new installation</a>
                     </li>
                     <!--<li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
@@ -36,7 +36,7 @@
             <div class="col-2">    </div>
             <div class="col-8">
 <h3>Software</h3>
-  <form action="" method="post">
+  <form action="../processpage/entry.php" method="post">
 
 
 <div>
@@ -48,7 +48,7 @@
 <textarea name="description" id="" cols="30" rows="10"></textarea>
 </div>
 <br>
-<h3>Instalation</h3>
+<h3>Installation</h3>
 <div>
 <label for="date"> date </label>
 <input type="date" name="date" id="date">
@@ -63,12 +63,22 @@
     <option value="Linux Server"> Linux Server</option>
 </select>
 </div>
-
+<hr>
+<h3>Installation flow</h3>
+<div>
+<label for="enviroment"> Start </label>
+<input type="radio" name="flow" id="flow" value="Start" checked>
+<label for="enviroment"> In Progress </label>
+<input type="radio" name="flow" id="flow" value="In Progress">
+<label for="enviroment"> Finish </label>
+<input type="radio" name="flow" id="flow" value="Finish">
+</div>
 <div>
 
-<input type="submit" value="Update"></div>
+<input type="submit" value="Submit"></div>
 
 </form>
+
 </div>
 </div>
             <div class="col-2">    </div>

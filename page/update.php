@@ -23,7 +23,12 @@ $mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');
     <title>Update</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/style1.css">.
+    <script>
+        function subm() {
+            var name = document.getElementById('name').innerHTML
+        }
+    </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -55,7 +60,7 @@ $mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');
             <form action="../processpage/modify.php" method="post">
             <h3>Software</h3>
               <div>
-                <label for="name"> Name </label>
+                <label for="name"> Name <span style="color:red">*</span></label>
                 <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($result[0]['name'], ENT_QUOTES);?>">
                 </div>
                 <div>

@@ -74,11 +74,11 @@
       <div class="invalid-feedback">Enter the name of the software.</div>
 </div>
 <div class="alert alert-danger" role="alert" id="errordes" hidden>
-    <span>You can enter only 25 characters in the description</span>
+    <span>You can enter only 250 characters in the description</span>
 </div>
 <div class="form-group">
 <label for="description"> Description </label>
-<textarea class="form-control" name="description" id="description" cols="10" rows="5" onkeydown="fr()" onchange="validateForm()"></textarea>
+<textarea class="form-control" name="description" id="description" cols="10" rows="5" onkeydown="fr()" ></textarea>
 <span id='desc'></span>
 </div>
 <br>
@@ -88,7 +88,7 @@
 </div>
 <div class="form-group">
 <label for="date"> date </label>
-<input class="form-control" type="date" name="date" id="date" onchange="validateForm()">
+<input class="form-control" type="date" name="date" id="date" required>
 <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Select date to continue.</div>
 </div>
@@ -136,6 +136,7 @@ function fr() {
         document.getElementById("desc").innerHTML= "You have use "+ calcul + "/250 works ";
     }else{
         document.getElementById("desc").innerHTML="";
+        document.getElementById("errordes").hidden=false;
     }
 }
 </script>

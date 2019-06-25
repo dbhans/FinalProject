@@ -1,6 +1,5 @@
 <?php
-//Load template
-//require_once('../processpage/find.php');
+
 $mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');	
 $stmt = $mysql->query("Select * from installation ");
 
@@ -49,17 +48,6 @@ $stmt = $mysql->query("Select * from installation ");
                 <th>Name </th> <th>Description </th> <th>Date</th> <th>Display</th></tr>
         </thead>
         
-<<<<<<< HEAD
-<?php
-$mysql = new PDO('mysql:host=localhost;dbname=it', "root", "");
-$res = $mysql->query('select * from sta');
-//print_r($res);
-
-foreach ($res as $sela ){
-    echo "<tr><td>".$sela['name']."</td> <td>".$sela['des']."</td><td>".$sela['des']."</td><td><a href='update.php?id=".$sela['id']."'><button>Update</button></a></td></tr>";
-}
-?>
-=======
    
     <?php 
 			foreach ($stmt as $numb ) {
@@ -68,7 +56,6 @@ foreach ($res as $sela ){
 			}						
 	?>
     
->>>>>>> f96c3d6a33539e8306bb98ac3aaf7ac42229999b
     
     </table>
     

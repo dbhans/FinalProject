@@ -7,7 +7,7 @@
     <title>Welcome</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="../css/style1.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -74,9 +74,34 @@
     }
     if (!isset($errors)) {
                 ?>
-               <h4> Unable to update the informations for the new installation </h4> 
+                <div class="alert alert-danger" role="alert" >
+                    <h4> Unable to update the informations for the new installation </h4> 
+                </div>
     <?php } else { ?>
-    <h4> All information have been update properly</h4> <?php print_r($_POST);}} ?>
+    
+    <div class="alert alert-success" role="alert" >
+    <h4> All information have been update properly</h4> 
+    
+    </div>
+    
+    <div class="row-margin">  
+    
+    <fieldset>
+    <legend>The information updated are </legend>
+    Name: <?php echo htmlspecialchars($_POST['name'], ENT_QUOTES)?><br>
+    Description: <?php echo htmlspecialchars($_POST['description'], ENT_QUOTES)?><br>
+    Enviroment: <?php echo htmlspecialchars($_POST['enviroment'], ENT_QUOTES)?><br>
+    Date: <?php echo htmlspecialchars($_POST['date'], ENT_QUOTES)?><br>
+    Flow: <?php echo htmlspecialchars($_POST['flow'], ENT_QUOTES)?><br>
+    </fieldset>
+
+    </div>
+    
+  
+    
+    
+    
+    <?php }} ?>
                 </div>
                 <div class="col-2">    </div>
             </div>

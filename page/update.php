@@ -70,7 +70,7 @@ $mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');
             </div>    
         </nav>
 <main role="main">
-<div class="container-fluid"></div>
+<div class="container-fluid" style="margin-buttom:30px">
         <div class="row">
             <div class="col-2">    </div>
             <div class="col-8">
@@ -136,7 +136,7 @@ $mysql = new PDO('mysql:host=localhost;dbname=system_installation', 'root', '');
     </div>
                 <div class="col-4">    </div>
             </div>
-
+            </div>
         </div>
         </main>
             <footer class="footer text-muted">
